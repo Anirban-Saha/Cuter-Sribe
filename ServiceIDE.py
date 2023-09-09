@@ -20,7 +20,7 @@ def run(language, source, inputs):
         os.system("touch {}; echo '{}' > {}".format(sourcefile, source, sourcefile))
         os.system("touch {}; echo '{}' > {}".format(inputfile, inputs, inputfile))
         run = "cd {}; ".format(tempdir) + runstring[language]
-        error = os.system(run)
+        os.system(run)
         output = open(outputfile, 'r')
         error = open(errorfile, 'r')
         response['output'] = output.read()
